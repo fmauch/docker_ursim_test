@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  driver:
+    build: .
+  ursim:
+    image: "universalrobots/ursim_e-series:5.11.1"
+    volumes:
+      - ./urcaps:/urcaps
+      - ./programs:/ursim/programs
+    ports:
+      - "6080:6080"
